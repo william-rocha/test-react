@@ -6,16 +6,20 @@ import { useSelector, useDispatch } from "react-redux";
 import * as cursoAction from "../../redux/hooks/curso"
 
 export default function HomePage() {
-	const [emailsList, setEmailsList] = useState([]);
-	const curso = useSelector(state => state.curso);
 	const dispatch = useDispatch();
+	useEffect(() => {
+		cursoAction.getCursoApi()(dispatch)
+	  }, []);
+	const [emailsList, setEmailsList] = useState([]);
+	const store = useSelector(state => state.curso);
+	
 	const add = function () {
 		dispatch(cursoAction.getCurso('laravel'))
 	}
 	return (
 		<>
 			<ul>
-				{curso.cursos.map(curso => <li key={curso}>{curso}</li>)}
+				{store.cursos.map(curso => <li key={curso.id}>{curso.nome}</li>)}
 			</ul>
 			<button onClick={add}>add</button>
 			<h1>Seeds HomePage</h1>

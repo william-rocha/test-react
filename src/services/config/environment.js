@@ -6,7 +6,7 @@ export default {
 	currentEnvironment: 'dev',
 	baseUrl: {
 		dev: {
-			urlApi: 'http://localhost:3000',
+			urlApi: 'http://localhost:3000/',
 		},
 		homolog: {
 			urlApi: '[URL DA API EM HML]',
