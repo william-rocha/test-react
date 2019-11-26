@@ -14,7 +14,7 @@ export default function HomePage() {
 	const store = useSelector(state => state.curso);
 	
 	const add = function () {
-		dispatch(cursoAction.getCurso('laravel'))
+		dispatch(cursoAction.getCurso({id: 1, nome: 'laravel'}))
 	}
 	return (
 		<>

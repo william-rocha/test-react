@@ -13,15 +13,17 @@ export const Type = {
 }
 
 const initialState = {
-    cursos: []
+    cursos: [{id: 1, nome: 'joao'}]
 }
 
 export default function curso(state = initialState, action) {
     switch (action.type) {
         case Type.GET_CURSOS: 
+            console.log(action.cursos)
             return {
-                ...state, cursos: [...state.cursos, action.cursos]
+                ...state, cursos: [...state.cursos,action.cursos]
             }
+          
             case Type.GET_ALL: 
             return {
                 ...state, cursos: [...state.cursos, ...action.cursos]
